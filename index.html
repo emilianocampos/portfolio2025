@@ -51,6 +51,11 @@
       href="assets/img/safari-pinned-tab.svg"
       color="#5bbad5"
     />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Stylesheets
@@ -63,35 +68,53 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
   </head>
-  <body>
+
+  <body class="body-loading " >
+    <div class="loader-overlay" id="loader-overlay">
+      <div class="terminal-loader slideInDown animated" id="loader">
+        <div class="terminal-header">
+          <div class="terminal-title">Status</div>
+          <div class="terminal-controls">
+            <div class="control close"></div>
+            <div class="control minimize"></div>
+            <div class="control maximize"></div>
+          </div>
+        </div>
+        <div class="text">Cargando...</div>
+      </div>
+    </div>
     <!-- Hero Section, Background Image change in css -->
-    <div id="top" class="hero background-overlay">
+    <div id="top" class="hero background-overlay" data-aos="fade-right" data-aos-delay="2000">
       <!-- Name & Description -->
       <div
         class="hero-content text-center text-white d-flex flex-column justify-content-center align-items-center vh-100 px-3"
         style="background: url('tu-imagen.jpg') no-repeat center center / cover"
       >
         <div class="container">
-          <h1 class="fw-bold display-5 mb-3 text-shadow">
+          <h1 class="fw-bold display-5 mb-3 text-shadow" data-aos="fade-right" data-aos-delay="2200">
             Soy Emiliano Campos, desarrollador web
           </h1>
-          <h2 class="h4 fw-semibold mb-4 text-shadow">
+          <h2 class="h4 fw-semibold mb-4 text-shadow toph2" data-aos="fade-right" data-aos-delay="2400">
             ¿Necesitás una página web profesional?
           </h2>
-          <p class="lead mb-5 text-shadow">
+          <p class="lead mb-5 text-shadow data-aos="fade-right" data-aos-delay="2600"">
             Webs que no solo se ven bien: <strong>funcionan</strong>,
             <strong>venden</strong> y <strong>posicionan</strong>.
           </p>
-          <a href="#contacto" class="btn btn-lg shadow-sm calltoac"
-            >Contame qué necesitás</a
-          >
+         
+
+            <a data-aos="fade-right" data-aos-delay="2600"" href="#contacto" class="btn  btn-lg shadow-sm calltoac"
+              >Pedí tu presupuesto</a
+            >
+         
         </div>
       </div>
 
@@ -126,7 +149,7 @@
 
             <!-- Name -->
             <div class="page-scroll site-logo">
-              <a href="#top">John</a>
+              <a href="#top">E C</a>
             </div>
           </div>
           <!-- /.navbar-header -->
@@ -422,8 +445,6 @@
               </div>
               <!-- /.review -->
 
-
-
               <div class="review">
                 <h3 class="h3s">App web buscador de gifs</h3>
                 <div class="lin">
@@ -446,11 +467,6 @@
                   <img src="./assets/img/gifspag.png" alt="" class="vidb" />
                 </div>
               </div>
-
-
-
-
-
 
               <div class="review">
                 <h3 class="h3s">Sitio web empresa: ECO Limpia</h3>
@@ -497,10 +513,6 @@
                 </div>
               </div>
 
-              
-
-
-
               <div class="review">
                 <h3 class="h3s">App web calculadora IMC</h3>
                 <div class="lin">
@@ -523,10 +535,6 @@
                   <img src="./assets/img/imcpag.png" alt="" class="vidb" />
                 </div>
               </div>
-
-
-
-
 
               <div class="review">
                 <h3 class="h3s">App web lista de medicamentos</h3>
@@ -551,13 +559,10 @@
                 </div>
               </div>
 
-
-
-
-
-
               <div class="review">
-                <h3 class="h3s">App web información y estadisticas de videojuego</h3>
+                <h3 class="h3s">
+                  App web información y estadisticas de videojuego
+                </h3>
                 <div class="lin">
                   <a
                     class="linkscarru"
@@ -579,12 +584,6 @@
                 </div>
               </div>
 
-
-
-
-
-
-
               <div class="review">
                 <h3 class="h3s">Creación de plugin parar WordPress</h3>
                 <div class="lin">
@@ -598,18 +597,9 @@
                 </div>
 
                 <div class="vid">
-                  
-
                   <img src="./assets/img/plg.png" alt="" class="vidb" />
                 </div>
               </div>
-
-
-
-
-
-
-              
             </div>
             <!-- /.review-carousel -->
           </div>
@@ -797,9 +787,13 @@
                         completas, combinamos diseño, funcionalidad y
                         rendimiento para ofrecer experiencias fluidas y eficaces
                         en cualquier dispositivo.
-                        
                       </p>
-<p>Además, integro el consumo de APIs mediante fetch y realizo manipulación dinámica de datos, permitiendo sistemas actualizados en tiempo real y completamente personalizados.</p>
+                      <p>
+                        Además, integro el consumo de APIs mediante fetch y
+                        realizo manipulación dinámica de datos, permitiendo
+                        sistemas actualizados en tiempo real y completamente
+                        personalizados.
+                      </p>
                       <p>
                         Convertí tu idea en una app web funcional que crece con
                         tu negocio.
@@ -1946,13 +1940,35 @@
       <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-
+    <script>
+      window.addEventListener("load", () => {
+        
+        setTimeout(() => {
+         
+          const overlay = document.getElementById("loader-overlay");
+          overlay.style.opacity = "0";
+          overlay.style.transition = "opacity 0.5s ease";
+          setTimeout(() => {
+            overlay.style.display = "none";
+          }, 500);
+        }, 2000); 
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <!-- Bootstrap core JavaScript
+     
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- jQuery core js | Do not Delete -->
     <script src="assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/anijs@0.9.3/dist/anijs-min.js"></script>
 
+<!-- Animate.css (para los efectos) -->
+
+    <script src="https://cdn.jsdelivr.net/npm/anijs@0.9.3/dist/anijs-min.js"></script>
     <!-- Bootstrap core js | Do not Delete -->
     <script src="assets/js/bootstrap.min.js"></script>
 
